@@ -1,6 +1,7 @@
 .list {
   width: 100%;
   margin-top: 25px;
+  //   margin-left: 10px;
 
   .listTitle {
     color: #fff;
@@ -20,6 +21,7 @@
       width: 4%;
       height: 100%;
       position: absolute;
+      background-color: black;
       z-index: 997;
       top: 0;
       bottom: 0;
@@ -39,6 +41,8 @@
       margin-left: 70px;
       width: max-content;
       transform: translateX(0px);
+      transition: all 1s ease;
+      //   background-color: pink;
     }
   }
 }

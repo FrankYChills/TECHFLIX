@@ -1,6 +1,29 @@
 .listItem {
   width: 225px;
   height: 220px;
-  background-color: red;
+  //   background-color: red;
   margin-right: 10px;
+  color: white;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  &:hover {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    bottom: 100px;
+    -webkit-box-shadow: 0px 3px 5px 10px rgb(250, 246, 250);
+    -moz-box-shadow: 0px 3px 5px 10px rgb(247, 241, 247);
+    box-shadow: 0px 3px 5px 10px rgb(252, 87, 36);
+
+    img {
+      height: 60%;
+    }
+  }
 }
