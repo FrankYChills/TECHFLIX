@@ -1,0 +1,44 @@
+.list {
+  width: 100%;
+  margin-top: 25px;
+
+  .listTitle {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+    margin-left: 70px;
+
+    letter-spacing: 1px;
+  }
+
+  .wrapper {
+    margin: 20px 0 0 0px;
+    position: relative;
+    // background-color: blue;
+    .sliderArrow {
+      color: white;
+      width: 4%;
+      height: 100%;
+      position: absolute;
+      z-index: 997;
+      top: 0;
+      bottom: 0;
+      cursor: pointer;
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+    }
+
+    .container {
+      display: flex;
+      margin-left: 70px;
+      width: max-content;
+      transform: translateX(0px);
+    }
+  }
+}

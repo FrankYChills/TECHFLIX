@@ -1,6 +1,6 @@
 .featured {
   height: 90vh;
-  //   position: relative;
+  position: relative;
 
   img {
     height: 100%;
@@ -12,7 +12,7 @@
 
   .info {
     position: absolute;
-    top: 210px;
+    top: 290px;
     left: 200px;
     color: white;
     width: 35%;
@@ -20,11 +20,11 @@
     flex-direction: column;
 
     img {
-      height: 250px;
-      width: 350px;
-      object-fit: scale-down;
+      height: 190px;
+      width: 270px;
+      // object-fit: scale-down;
       opacity: 0.5;
-      position: relative;
+      // position: relative;
       right: 40px;
     }
 
