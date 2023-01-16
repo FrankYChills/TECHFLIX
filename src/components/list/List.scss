@@ -21,7 +21,7 @@
       width: 4%;
       height: 100%;
       position: absolute;
-      background-color: black;
+      //   background-color: blue;
       z-index: 997;
       top: 0;
       bottom: 0;
@@ -40,8 +40,10 @@
       display: flex;
       margin-left: 70px;
       width: max-content;
+      height: 250px;
       transform: translateX(0px);
       transition: all 1s ease;
+
       //   background-color: pink;
     }
   }
