@@ -1,0 +1,103 @@
+.register {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-color);
+  position: relative;
+
+  .register-bg {
+    opacity: 0.4;
+
+    width: 100%;
+    height: 100%;
+  }
+  .top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .wrapper {
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      //   background-color: blue;
+
+      .logo {
+        height: 75px;
+        width: 200px;
+        margin-left: 2%;
+      }
+
+      .loginButton {
+        background-color: red;
+        border: none;
+        color: white;
+        padding: 15px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .container {
+    // background-color: blue;
+
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+
+    h1 {
+      font-size: 50px;
+      font-family: Montserrat;
+    }
+
+    h2 {
+      margin: 20px 0;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      font-size: 22px;
+      letter-spacing: 0.7px;
+    }
+
+    .input {
+      width: 50%;
+      background-color: blue;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      height: 50px;
+
+      input {
+        height: 100%;
+        flex: 9;
+        font-size: 20px;
+        padding: 0 5px;
+        border: none;
+        font-family: Roboto Slab;
+      }
+
+      button {
+        height: 100%;
+        flex: 3;
+        font-size: 20px;
+        letter-spacing: 1px;
+        background-color: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 0 5px;
+      }
+    }
+  }
+}

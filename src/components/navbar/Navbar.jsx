@@ -2,6 +2,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./Navbar.scss";
 
@@ -17,9 +18,15 @@ const Navbar = () => {
       <div className="container">
         <div className="left">
           <img src="images/techflix-logo.png" />
-          <span>Home</span>
-          <span>Series</span>
-          <span>Movies</span>
+          <Link to="/" className="link">
+            <span>Home</span>
+          </Link>
+          <Link to="/series" className="link">
+            <span>Series</span>
+          </Link>
+          <Link to="/movies" className="link">
+            <span>Movies</span>
+          </Link>
           <span>Popular</span>
           <span>Favourites</span>
         </div>

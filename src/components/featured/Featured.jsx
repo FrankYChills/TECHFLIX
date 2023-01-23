@@ -1,14 +1,39 @@
 import PlayCircleFilledWhiteOutlinedIcon from "@mui/icons-material/PlayCircleFilledWhiteOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import "./Featured.scss";
 
 const Featured = ({ type }) => {
+  const [content, setContent] = useState({});
+
+  useEffect(() => {
+    console.log("I got triggred");
+    const randomMovie = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:3500` +
+            `/api/movies/random${type ? `?type=` + type : ``}`,
+          {
+            headers: {
+              authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2E0MTBlYTViYjBlMTY2MjY3NTZjNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDM2NTkzNCwiZXhwIjoxNjc0OTcwNzM0fQ.IP28VZxkIjXAszWGtBBXRhDXAI5lKz274vqvqIeE328",
+            },
+          }
+        );
+        setContent(res.data.data[0]);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    randomMovie();
+  }, []);
   return (
     <div className="featured">
       {type && (
         <div className="category">
-          <span>{type === "movie" ? "Movies" : "Series"}</span>
+          <span>{type === "movies" ? "Movies" : "Series"}</span>
           <select name="genre" id="genre">
             <option>Genre</option>
             <option value="adventure">Adventure</option>
@@ -24,14 +49,10 @@ const Featured = ({ type }) => {
           </select>
         </div>
       )}
-      <img src="images/featured2.jpg" className="fimage" />
+      <img src={content.mainImg} className="fimage" />
       <div className="info">
-        <img src="images/heading.png" />
-        <span className="desc">
-          Tommy Shelby, a dangerous man, leads the Peaky Blinders, a gang based
-          in Birmingham. Soon, Chester Campbell, an inspector, decides to nab
-          him and put an end to the criminal activities.
-        </span>
+        <img src={content.titleImg} />
+        <span className="desc">{content.desc}</span>
         <div className="buttons">
           <button className="play">
             <PlayCircleFilledWhiteOutlinedIcon />
