@@ -1,6 +1,7 @@
 .featured {
-  height: 99vh;
+  height: 100vh;
   position: relative;
+  background-color: black;
 
   img {
     height: 100%;
@@ -90,6 +91,10 @@
       margin-left: 20px;
       padding: 20px;
       color: white;
+
+      option {
+        font-size: 20px;
+      }
     }
   }
 }

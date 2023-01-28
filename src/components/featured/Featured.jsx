@@ -47,8 +47,6 @@ const Featured = ({ type, setGenre }) => {
             <option value="scifi">Sci-Fi</option>
             <option value="thriller">Thriller</option>
             <option value="romance">Romance</option>
-
-            <option value="horror">Horror</option>
           </select>
         </div>
       )}
