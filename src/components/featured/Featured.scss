@@ -1,5 +1,5 @@
 .featured {
-  height: 90vh;
+  height: 99vh;
   position: relative;
 
   img {
@@ -21,9 +21,9 @@
 
     img {
       height: 190px;
-      width: 270px;
-      // object-fit: scale-down;
-      opacity: 0.5;
+      width: 400px;
+      object-fit: cover;
+      opacity: 1;
       // position: relative;
       right: 40px;
     }
@@ -32,6 +32,7 @@
       margin: 20px 0;
       letter-spacing: 1px;
       line-height: 1.5em;
+      font-size: 20px;
     }
 
     .buttons {

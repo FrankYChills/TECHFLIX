@@ -1,11 +1,12 @@
 import PlayCircleFilledWhiteOutlinedIcon from "@mui/icons-material/PlayCircleFilledWhiteOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import "./Featured.scss";
 
-const Featured = ({ type }) => {
+const Featured = ({ type, setGenre }) => {
   const [content, setContent] = useState({});
 
   useEffect(() => {
@@ -34,17 +35,19 @@ const Featured = ({ type }) => {
       {type && (
         <div className="category">
           <span>{type === "movies" ? "Movies" : "Series"}</span>
-          <select name="genre" id="genre">
-            <option>Genre</option>
+          <select
+            name="genre"
+            id="genre"
+            onChange={(e) => setGenre(e.target.value)}
+          >
+            <option></option>
             <option value="adventure">Adventure</option>
             <option value="comedy">Comedy</option>
-            <option value="drama">Drama</option>
-            <option value="crime">Crime</option>
-            <option value="historical">Historical</option>
+
             <option value="scifi">Sci-Fi</option>
             <option value="thriller">Thriller</option>
             <option value="romance">Romance</option>
-            <option value="documentry">Documentry</option>
+
             <option value="horror">Horror</option>
           </select>
         </div>
@@ -58,10 +61,12 @@ const Featured = ({ type }) => {
             <PlayCircleFilledWhiteOutlinedIcon />
             <span>Play</span>
           </button>
-          <button className="more">
-            <InfoOutlinedIcon />
-            <span>Info</span>
-          </button>
+          <Link to={`/info/${content._id}`}>
+            <button className="more">
+              <InfoOutlinedIcon />
+              <span>Info</span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

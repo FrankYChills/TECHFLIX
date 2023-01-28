@@ -43,7 +43,7 @@ const Watch = () => {
         muted
         controls
         //change src to movie.video
-        src="https://player.vimeo.com/external/477036748.sd.mp4?s=4e0e1515712d6dd0164360c5293f4264d0f04392&profile_id=164&oauth2_token_id=57447761"
+        src={movie?.trailer}
       />
     </div>
   );

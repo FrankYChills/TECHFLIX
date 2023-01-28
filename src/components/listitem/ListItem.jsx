@@ -32,17 +32,16 @@ const ListItem = ({ itemId }) => {
     };
     getMovie();
   }, [itemId]);
-  const trailer =
-    "https://player.vimeo.com/external/474290490.sd.mp4?s=8d9cd0017560b143939d744fe67459e98da3e8e2&profile_id=165&oauth2_token_id=57447761";
+  const trailer = movie?.trailer;
 
   return (
-    <Link to={`/watch/${itemId}`}>
+    <Link to={`/info/${itemId}`}>
       <div
         className="listItem"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <img src={movie.thumbnailImg} alt="" />
+        <img src={movie.mainImg} alt="" />
         {isHovered ? (
           <video src={trailer} autoPlay={true} muted={true} loop />
         ) : (
@@ -57,11 +56,11 @@ const ListItem = ({ itemId }) => {
             <ThumbDownOutlinedIcon className="icon" />
           </div>
           <div className="itemInfoTop">
-            <span>1 hour 20 minutes</span>
+            <span>{movie.title}</span>
             <span className="limit">+{movie.ageLimit}</span>
             <span>{movie.year}</span>
           </div>
-          <div className="desc">{movie.desc}</div>
+
           <div className="genre">{movie.genre}</div>
         </div>
       </div>
