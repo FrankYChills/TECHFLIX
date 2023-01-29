@@ -1,18 +1,29 @@
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Navbar.scss";
+import { authContext } from "../../context/auth/authContext";
+import { logout } from "../../context/auth/apiCall";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const { dispatch, user } = useContext(authContext);
+
+  const navigate = useNavigate();
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => window.onscroll(null);
   };
+
+  const logOutUser = () => {
+    logout(dispatch);
+    navigate("/");
+  };
+
   return (
     <div className={isScrolled ? "navbar scrolled" : "navbar"}>
       <div className="container">
@@ -32,14 +43,16 @@ const Navbar = () => {
         </div>
         <div className="right">
           <SearchIcon className="icon" />
-          <span>Kid</span>
+          <span className="name">{user.username}</span>
           <NotificationsNoneIcon className="icon" />
-          <img src="images/profile-pic.jpeg" />
+          <img src="images/newuser.png" />
           <div className="profile">
             <ExpandMoreIcon className="icon" />
             <div className="options">
               <span>Settings</span>
-              <span>Logout</span>
+              <button onClick={logOutUser}>
+                <span>Logout</span>
+              </button>
             </div>
           </div>
         </div>

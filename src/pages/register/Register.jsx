@@ -1,21 +1,30 @@
-import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { signup } from "../../context/auth/apiCall";
+import { authContext } from "../../context/auth/authContext";
 
 import "./Register.scss";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const emailRef = useRef();
   const passwordRef = useRef();
+
+  const navigate = useNavigate();
+
+  const { dispatch } = useContext(authContext);
 
   const handleStart = () => {
     setEmail(emailRef.current.value);
   };
 
-  const handleFinish = () => {
-    setPassword(passwordRef.current.value);
+  const handleFinish = (e) => {
+    e.preventDefault();
+
+    signup({ email: email, password: password, username: name }, dispatch);
   };
 
   return (
@@ -44,16 +53,24 @@ const Register = () => {
             </button>
           </div>
         ) : (
-          <form className="input">
+          <>
             <input
-              type="password"
-              placeholder="Enter your password"
-              ref={passwordRef}
+              type="text"
+              placeholder="Enter Your Name"
+              onChange={(e) => setName(e.target.value)}
             />
-            <button className="registerButton" onClick={handleFinish}>
-              Sign Up
-            </button>
-          </form>
+            <form className="input">
+              <input
+                type="password"
+                placeholder="Enter your password"
+                ref={passwordRef}
+                onChange={() => setPassword(passwordRef.current.value)}
+              />
+              <button className="registerButton" onClick={handleFinish}>
+                Sign Up
+              </button>
+            </form>
+          </>
         )}
       </div>
     </div>

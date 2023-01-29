@@ -17,7 +17,7 @@ export const login = async (user, dispatch) => {
       user
     );
 
-    // dipatch login success o
+    // dipatch login success
     dispatch(loginSuccess(res.data.data));
   } catch (err) {
     dispatch(loginFailure());
@@ -28,4 +28,20 @@ export const login = async (user, dispatch) => {
 // logout
 export const logout = (dispatch) => {
   dispatch(logoutSuccess());
+};
+
+// Register a new user
+export const signup = async (user, dispatch) => {
+  dispatch(loginStart());
+  try {
+    const res = await axios.post(
+      "http://localhost:3500" + "/api/auth/register",
+      user
+    );
+    // update state
+    dispatch(loginSuccess(res.data.data));
+  } catch (err) {
+    dispatch(loginFailure());
+    console.log(err);
+  }
 };

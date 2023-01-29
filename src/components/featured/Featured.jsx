@@ -8,7 +8,7 @@ import "./Featured.scss";
 
 const Featured = ({ type, setGenre }) => {
   const [content, setContent] = useState({});
-
+  const [sel, setSel] = useState("");
   useEffect(() => {
     console.log("I got triggred");
     const randomMovie = async () => {
@@ -29,7 +29,7 @@ const Featured = ({ type, setGenre }) => {
       }
     };
     randomMovie();
-  }, [type]);
+  }, [type, sel]);
   return (
     <div className="featured">
       {type && (
@@ -38,7 +38,10 @@ const Featured = ({ type, setGenre }) => {
           <select
             name="genre"
             id="genre"
-            onChange={(e) => setGenre(e.target.value)}
+            onChange={(e) => {
+              setSel(e.target.value);
+              setGenre(e.target.value);
+            }}
           >
             <option></option>
             <option value="adventure">Adventure</option>

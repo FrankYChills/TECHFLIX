@@ -42,10 +42,15 @@
       //   margin-right: 10px;
       img {
         height: 2.8em;
-        width: 2.5em;
+        width: 2.8em;
         border-radius: 50%;
-        object-fit: cover;
+        // object-fit: cover;
         cursor: pointer;
+      }
+
+      .name {
+        font-size: 20px;
+        letter-spacing: 1px;
       }
 
       .icon {
@@ -70,6 +75,11 @@
             span {
               margin-bottom: 10px;
               cursor: pointer;
+            }
+            button {
+              font-size: 18px;
+              color: white;
+              background-color: black;
             }
           }
         }
