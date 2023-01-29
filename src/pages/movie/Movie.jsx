@@ -4,6 +4,11 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+
+import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
+import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
+import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
+
 import "./Movie.scss";
 
 const Movie = () => {
@@ -17,7 +22,7 @@ const Movie = () => {
         {
           headers: {
             authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2E0MTBlYTViYjBlMTY2MjY3NTZjNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDM2NTkzNCwiZXhwIjoxNjc0OTcwNzM0fQ.IP28VZxkIjXAszWGtBBXRhDXAI5lKz274vqvqIeE328",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2E0MTBlYTViYjBlMTY2MjY3NTZjNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDk3MzM1MSwiZXhwIjoxNjc1NTc4MTUxfQ.WKlOb6hkiIQMY3tEvzh6WY-sT4Z4PsC8jarKABUFuRU",
           },
         }
       );
@@ -43,6 +48,11 @@ const Movie = () => {
             <span>Play</span>
           </button>
         </Link>
+        <div className="icons">
+          <AddCircleOutlineOutlinedIcon className="icon" />
+          <ThumbUpOutlinedIcon className="icon" />
+          <ThumbDownOutlinedIcon className="icon" />
+        </div>
       </div>
     </div>
   );

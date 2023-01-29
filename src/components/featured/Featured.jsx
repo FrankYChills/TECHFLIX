@@ -19,7 +19,7 @@ const Featured = ({ type, setGenre }) => {
           {
             headers: {
               authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2E0MTBlYTViYjBlMTY2MjY3NTZjNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDM2NTkzNCwiZXhwIjoxNjc0OTcwNzM0fQ.IP28VZxkIjXAszWGtBBXRhDXAI5lKz274vqvqIeE328",
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2E0MTBlYTViYjBlMTY2MjY3NTZjNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDk3MzM1MSwiZXhwIjoxNjc1NTc4MTUxfQ.WKlOb6hkiIQMY3tEvzh6WY-sT4Z4PsC8jarKABUFuRU",
             },
           }
         );
@@ -29,7 +29,7 @@ const Featured = ({ type, setGenre }) => {
       }
     };
     randomMovie();
-  }, []);
+  }, [type]);
   return (
     <div className="featured">
       {type && (
@@ -47,6 +47,7 @@ const Featured = ({ type, setGenre }) => {
             <option value="scifi">Sci-Fi</option>
             <option value="thriller">Thriller</option>
             <option value="romance">Romance</option>
+            <option value="action">Action</option>
           </select>
         </div>
       )}
@@ -55,11 +56,13 @@ const Featured = ({ type, setGenre }) => {
         <img src={content.titleImg} />
         <span className="desc">{content.desc}</span>
         <div className="buttons">
-          <button className="play">
-            <PlayCircleFilledWhiteOutlinedIcon />
-            <span>Play</span>
-          </button>
-          <Link to={`/info/${content._id}`}>
+          <Link to={`/watch/${content._id}`} className="link">
+            <button className="play">
+              <PlayCircleFilledWhiteOutlinedIcon />
+              <span>Play</span>
+            </button>
+          </Link>
+          <Link to={`/info/${content._id}`} className="link">
             <button className="more">
               <InfoOutlinedIcon />
               <span>Info</span>

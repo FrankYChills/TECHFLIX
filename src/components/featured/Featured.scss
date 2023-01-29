@@ -1,5 +1,5 @@
 .featured {
-  height: 100vh;
+  height: 85vh;
   position: relative;
   background-color: black;
 
@@ -13,7 +13,7 @@
 
   .info {
     position: absolute;
-    top: 290px;
+    top: 210px;
     left: 200px;
     color: white;
     width: 35%;
@@ -21,7 +21,7 @@
     flex-direction: column;
 
     img {
-      height: 190px;
+      height: 210px;
       width: 400px;
       object-fit: cover;
       opacity: 1;
@@ -62,6 +62,10 @@
 
         span {
           margin-left: 5px;
+        }
+
+        .link {
+          text-decoration: none;
         }
       }
     }

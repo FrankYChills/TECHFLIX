@@ -20,7 +20,7 @@ const List = ({ list }) => {
       listRef.current.style.transform = `translateX(${distance + 235}px)`;
     }
     if (direction === "right") {
-      if (distance < -1900) {
+      if (distance < -1700) {
         return;
       }
       listRef.current.style.transform = `translateX(${distance - 235 - 250}px)`;

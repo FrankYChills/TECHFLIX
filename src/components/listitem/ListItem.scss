@@ -1,7 +1,10 @@
+.link {
+  text-decoration: none;
+}
+
 .listItem {
   width: 420px;
   height: 320px;
-  // background-color: red;
   margin-right: 10px;
   color: white;
   overflow: hidden;
@@ -45,25 +48,18 @@
   }
   .item-info {
     background-color: black;
+    // background-color: red;
+
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     margin-top: 10px;
-
-    .icons {
-      display: flex;
-      margin-bottom: 10px;
-      cursor: pointer;
-
-      .icon {
-        font-size: 40px;
-        margin-right: 10px;
-      }
-    }
 
     .itemInfoTop {
       color: grey;
       display: flex;
-      margin-bottom: 10px;
+      margin-bottom: 50px;
       font-size: 19px;
       font-weight: 600;
 
@@ -74,20 +70,23 @@
       }
 
       span {
-        margin-left: 20px;
+        margin-right: 40px;
       }
     }
 
     .desc {
       font-size: 15px;
       padding: 5px;
-      margin-bottom: 8px;
+      // margin-bottom: 8px;
     }
 
     .genre {
       color: lightgrey;
       padding: 0 5px;
       font-size: 20px;
+      margin-bottom: 40px;
+      margin-right: 20px;
+      text-transform: capitalize;
     }
   }
 }
