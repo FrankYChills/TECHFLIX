@@ -108,3 +108,42 @@
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .register {
+    .top {
+      .wrapper {
+        padding-left: 0;
+        .logo {
+          height: 60px;
+          width: 120px;
+        }
+      }
+    }
+    .container {
+      top: 32%;
+      left: 5%;
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 25px;
+        margin-right: 20px;
+      }
+      p {
+        font-size: 22px;
+        margin-right: 20px;
+      }
+      .input {
+        width: 95%;
+        margin-right: 35px;
+        button {
+          font-size: 15px;
+        }
+        input {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

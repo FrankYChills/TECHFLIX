@@ -87,3 +87,65 @@
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .navbar {
+    height: 8vh;
+    background-color: black;
+    .container {
+      padding: 10px;
+      .left {
+        img {
+          height: 2rem;
+          width: 5rem;
+        }
+        span {
+          font-size: 15px;
+        }
+        span.ext {
+          display: none;
+        }
+      }
+      .right {
+        margin-bottom: 20px;
+        margin-left: 20px;
+
+        // background-color: red;
+        .icon.ext {
+          display: none;
+        }
+        span.name {
+          padding: 2px;
+          font-size: 15px;
+          border: 1px solid white;
+        }
+        img {
+          display: none;
+        }
+        .profile {
+          .options {
+            display: none;
+          }
+
+          .icon {
+            margin: 0;
+          }
+
+          &:hover {
+            .options {
+              right: -20px;
+              // background-color: blue;
+              span {
+                font-size: 15px;
+                padding: 0;
+              }
+            }
+            .icon {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

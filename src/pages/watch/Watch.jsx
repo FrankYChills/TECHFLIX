@@ -2,6 +2,7 @@ import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import { useState, useEffect } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import axios from "axios";
+import ReactPlayer from "react-player";
 
 import "./Watch.scss";
 
@@ -44,6 +45,7 @@ const Watch = () => {
         controls
         //change src to movie.video
         src={movie?.trailer}
+        controlsList={["nodownload"]}
       />
     </div>
   );

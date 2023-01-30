@@ -102,3 +102,34 @@
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .featured {
+    margin-bottom: 20px;
+    height: 80vh;
+    .info {
+      width: 90%;
+      top: 220px;
+      left: 30px;
+      img {
+        height: 100px;
+        width: 200px;
+      }
+      .desc {
+        font-size: 14px;
+      }
+    }
+    .category {
+      top: 80px;
+      font-size: 20px;
+
+      select {
+        padding: 5px;
+
+        option {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

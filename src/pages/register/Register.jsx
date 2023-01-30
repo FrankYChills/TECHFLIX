@@ -23,8 +23,9 @@ const Register = () => {
 
   const handleFinish = (e) => {
     e.preventDefault();
-
-    signup({ email: email, password: password, username: name }, dispatch);
+    if (name && email && password) {
+      signup({ email: email, password: password, username: name }, dispatch);
+    }
   };
 
   return (

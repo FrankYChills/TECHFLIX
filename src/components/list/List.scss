@@ -19,7 +19,7 @@
     // background-color: blue;
     .sliderArrow {
       color: white;
-      width: 4%;
+      width: 80px;
       height: 100%;
       position: absolute;
       //   background-color: blue;
@@ -46,6 +46,33 @@
       transition: all 1s ease;
 
       //   background-color: pink;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .list {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    .listTitle {
+      font-size: 20px;
+      margin-left: 20px;
+    }
+    .wrapper {
+      .sliderArrow {
+        width: 50px;
+        // margin-bottom: 20px;
+
+        &.left {
+          top: -10%;
+        }
+        &.right {
+          top: -10%;
+        }
+      }
+      .container {
+        margin-left: 5px;
+      }
     }
   }
 }

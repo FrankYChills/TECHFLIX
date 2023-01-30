@@ -38,17 +38,17 @@ const Navbar = () => {
           <Link to="/movies" className="link">
             <span>Movies</span>
           </Link>
-          <span>Popular</span>
-          <span>Favourites</span>
+          <span className="ext">Popular</span>
+          <span className="ext">Favourites</span>
         </div>
         <div className="right">
-          <SearchIcon className="icon" />
+          <SearchIcon className="icon ext" />
           <span className="name">{user.username}</span>
-          <NotificationsNoneIcon className="icon" />
+          <NotificationsNoneIcon className="icon ext" />
           <img src="images/newuser.png" />
           <div className="profile">
             <ExpandMoreIcon className="icon" />
-            <div className="options">
+            <div className="options" style={{ marginRight: "20px" }}>
               <span>Settings</span>
               <button onClick={logOutUser}>
                 <span>Logout</span>

@@ -90,3 +90,11 @@
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .listItem {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
+  }
+}

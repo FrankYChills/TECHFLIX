@@ -20,3 +20,5 @@ export const loginFailure = () => ({
 export const logoutSuccess = () => ({
   type: "LOGOUT",
 });
+
+// CREATE NEW USER

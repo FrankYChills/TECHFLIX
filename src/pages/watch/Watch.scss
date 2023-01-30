@@ -24,3 +24,23 @@
     height: 100%;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .watch {
+    .back {
+      font-size: 20px;
+      top: 30px;
+      .icon {
+        font-size: 20px;
+      }
+    }
+
+    video {
+      margin-top: 200px;
+      object-fit: cover;
+
+      width: 100%;
+      height: auto;
+    }
+  }
+}
