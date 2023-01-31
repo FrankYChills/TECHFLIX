@@ -97,7 +97,7 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .movie {
     img {
       opacity: 0.4;
@@ -132,6 +132,35 @@
         .playicon {
           font-size: 30px !important;
         }
+      }
+      .icons {
+        width: 100%;
+        .icon {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 450px) and (max-width: 1050px) {
+  .movie {
+    .info {
+      left: 150px;
+      width: 70%;
+      top: 190px;
+      .desc {
+        font-size: 20px;
+      }
+      .back {
+        font-size: 25px;
+        .icon {
+          position: relative;
+          top: 10px;
+        }
+      }
+      button.play {
+        width: 25%;
       }
       .icons {
         width: 100%;

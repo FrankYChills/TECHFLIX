@@ -65,7 +65,7 @@
     }
 
     p {
-      font-size: 22px;
+      font-size: 22px 0px;
       letter-spacing: 0.7px;
     }
 
@@ -109,7 +109,7 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .register {
     .top {
       .wrapper {
@@ -141,8 +141,40 @@
           font-size: 15px;
         }
         input {
-          padding: 0;
+          padding: 5px;
         }
+        button {
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 450px) and (max-width: 1050px) {
+  .register {
+    .container {
+      top: 25%;
+
+      h2 {
+        margin-right: 120px;
+        font-size: 30px;
+      }
+      p {
+        font-size: 30px;
+        text-align: center;
+        padding-right: 10px;
+        margin-right: 100px;
+      }
+
+      .input {
+        margin-right: 110px;
+        height: 60px;
+        width: 90%;
+      }
+
+      .name {
+        margin-right: 80px;
       }
     }
   }

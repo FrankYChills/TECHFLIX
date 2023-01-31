@@ -12,7 +12,7 @@ const List = ({ list }) => {
   const handleClick = (direction) => {
     setIsMoved(true);
     let distance = listRef.current.getBoundingClientRect().x;
-    console.log(distance);
+    // console.log(distance);
     if (direction === "left") {
       if (distance > 200) {
         return;
@@ -24,7 +24,7 @@ const List = ({ list }) => {
         return;
       }
       listRef.current.style.transform = `translateX(${distance - 235 - 250}px)`;
-      console.log(distance);
+      // console.log(distance);
     }
   };
   return (

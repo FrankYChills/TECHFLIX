@@ -50,7 +50,7 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .list {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -68,10 +68,27 @@
         }
         &.right {
           top: -10%;
+          right: 5%;
         }
       }
       .container {
         margin-left: 5px;
+      }
+    }
+  }
+}
+
+@media (min-width: 450px) and (max-width: 1050px) {
+  .list {
+    .wrapper {
+      .sliderArrow {
+        &.right {
+          top: 15%;
+          right: 5%;
+        }
+        &.left {
+          top: 15%;
+        }
       }
     }
   }

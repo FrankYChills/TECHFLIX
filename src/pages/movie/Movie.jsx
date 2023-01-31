@@ -1,6 +1,6 @@
 import PlayCircleFilledWhiteOutlinedIcon from "@mui/icons-material/PlayCircleFilledWhiteOutlined";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
@@ -10,23 +10,24 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
 
 import "./Movie.scss";
+import { authContext } from "../../context/auth/authContext";
 
 const Movie = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
+  const { user } = useContext(authContext);
 
   useEffect(() => {
     const getMovie = async () => {
       const res = await axios.get(
-        `http://localhost:3500` + `/api/movies/find/${id}`,
+        process.env.REACT_APP_API_URL + `/api/movies/find/${id}`,
         {
           headers: {
-            authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2E0MTBlYTViYjBlMTY2MjY3NTZjNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDk3MzM1MSwiZXhwIjoxNjc1NTc4MTUxfQ.WKlOb6hkiIQMY3tEvzh6WY-sT4Z4PsC8jarKABUFuRU",
+            authorization: `Bearer ${user.accessToken}`,
           },
         }
       );
-      console.log("info res", res.data);
+
       setMovie(res.data);
     };
     getMovie();

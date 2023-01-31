@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import Home from "./pages/home/Home";
 import Watch from "./pages/watch/Watch";
@@ -10,6 +10,8 @@ import { authContext } from "./context/auth/authContext";
 
 function App() {
   const { user } = useContext(authContext);
+  console.log("api url", typeof process.env.REACT_APP_API_URL);
+  useEffect(() => {}, [user]);
   return (
     <div className="App">
       <Routes>

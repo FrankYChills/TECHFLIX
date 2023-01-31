@@ -2,19 +2,20 @@ import "./Home.scss";
 import Navbar from "../../components/navbar/Navbar";
 import Featured from "../../components/featured/Featured";
 import List from "../../components/list/List";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { authContext } from "../../context/auth/authContext";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState("");
+  const { user } = useContext(authContext);
 
   useEffect(() => {
     const getRandomLists = async () => {
-      console.log("sending request");
       try {
         const res = await axios.get(
-          `http://localhost:3500` +
+          process.env.REACT_APP_API_URL +
             `/api/lists${
               type
                 ? !genre
@@ -24,14 +25,13 @@ const Home = ({ type }) => {
             }`,
           {
             headers: {
-              authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2E0MTBlYTViYjBlMTY2MjY3NTZjNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NDk3MzM1MSwiZXhwIjoxNjc1NTc4MTUxfQ.WKlOb6hkiIQMY3tEvzh6WY-sT4Z4PsC8jarKABUFuRU",
+              authorization: `Bearer ${user.accessToken}`,
             },
           }
         );
 
         // set lists acc to server response
-        console.log(res);
+
         setLists(res.data.data);
       } catch (err) {
         console.log(err);

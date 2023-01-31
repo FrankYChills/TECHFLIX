@@ -39,6 +39,7 @@
     .right {
       display: flex;
       align-items: center;
+      margin-bottom: 18px;
       //   margin-right: 10px;
       img {
         height: 2.8em;
@@ -88,7 +89,7 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .navbar {
     height: 8vh;
     background-color: black;
@@ -146,6 +147,25 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (min-width: 450px) and (max-width: 1050px) {
+  span.ext {
+    display: none;
+  }
+  .icon.ext {
+    display: none;
+  }
+  span.name {
+    padding: 2px;
+    font-size: 15px;
+    border: 1px solid white;
+  }
+  .right {
+    img {
+      display: none;
     }
   }
 }
