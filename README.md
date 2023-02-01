@@ -1,3 +1,16 @@
+# TECHFLIX APP
+
+This application is an implementation of popular video streaming app Netflix.
+Watch Your favourite TV Shows and movies for free with TechFlix.
+
+The App is Live at - https://techflix.onrender.com/
+
+The Backend API Repo is at - https://github.com/FrankYChills/TECHFLIX-API
+
+All movies and series are managed with Admin Dashboard which is at - https://github.com/FrankYChills/Admin-Dashboard
+
+It is made responsive too for mobile and tablets.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

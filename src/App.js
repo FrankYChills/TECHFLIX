@@ -10,7 +10,7 @@ import { authContext } from "./context/auth/authContext";
 
 function App() {
   const { user } = useContext(authContext);
-  console.log("api url", typeof process.env.REACT_APP_API_URL);
+
   useEffect(() => {}, [user]);
   return (
     <div className="App">
