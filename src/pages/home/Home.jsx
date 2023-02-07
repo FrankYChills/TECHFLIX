@@ -4,6 +4,7 @@ import Featured from "../../components/featured/Featured";
 import List from "../../components/list/List";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import HashLoader from "react-spinners/HashLoader";
 import { authContext } from "../../context/auth/authContext";
 
 const Home = ({ type }) => {
@@ -42,11 +43,21 @@ const Home = ({ type }) => {
 
   return (
     <div className="home">
-      <Navbar />
-      <Featured type={type} setGenre={setGenre} />
-      {lists.map((list, index) => (
-        <List list={list} key={index} />
-      ))}
+      {lists?.length ? (
+        <>
+          <Navbar />
+
+          <Featured type={type} setGenre={setGenre} />
+
+          {lists.map((list, index) => (
+            <List list={list} key={index} />
+          ))}
+        </>
+      ) : (
+        <div className="loader">
+          <HashLoader color="#36d7b7" size={100} />
+        </div>
+      )}
     </div>
   );
 };

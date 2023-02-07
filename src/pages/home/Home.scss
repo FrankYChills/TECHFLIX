@@ -1,4 +1,11 @@
 .home {
   background-color: var(--main-color);
   overflow: hidden;
+
+  .loader {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 40vh;
+  }
 }
