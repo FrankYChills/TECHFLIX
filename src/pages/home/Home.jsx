@@ -11,6 +11,7 @@ const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState("");
   const { user } = useContext(authContext);
+  const [isFetched, setIsFetched] = useState(false);
 
   useEffect(() => {
     const getRandomLists = async () => {
@@ -34,6 +35,7 @@ const Home = ({ type }) => {
         // set lists acc to server response
 
         setLists(res.data.data);
+        setIsFetched(true);
       } catch (err) {
         console.log(err);
       }
@@ -43,7 +45,7 @@ const Home = ({ type }) => {
 
   return (
     <div className="home">
-      {lists?.length ? (
+      {isFetched ? (
         <>
           <Navbar />
 

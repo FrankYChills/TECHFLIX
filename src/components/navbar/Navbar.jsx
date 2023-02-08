@@ -39,7 +39,9 @@ const Navbar = () => {
             <span>Movies</span>
           </Link>
           <span className="ext">Popular</span>
-          <span className="ext">Favourites</span>
+          <Link to="/fav" className="link">
+            <span className="ext">Favourites</span>
+          </Link>
         </div>
         <div className="right">
           <SearchIcon className="icon ext" />
@@ -49,7 +51,9 @@ const Navbar = () => {
           <div className="profile">
             <ExpandMoreIcon className="icon" />
             <div className="options" style={{ marginRight: "20px" }}>
-              <span>Settings</span>
+              <Link to="/fav" className="link">
+                <span>Favourites</span>
+              </Link>
               <button onClick={logOutUser}>
                 <span>Logout</span>
               </button>

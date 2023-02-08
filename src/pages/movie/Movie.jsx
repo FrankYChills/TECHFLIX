@@ -1,4 +1,5 @@
 import PlayCircleFilledWhiteOutlinedIcon from "@mui/icons-material/PlayCircleFilledWhiteOutlined";
+import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 import axios from "axios";
 import { useContext, useState } from "react";
 import { useEffect } from "react";
@@ -17,8 +18,27 @@ const Movie = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
   const { user } = useContext(authContext);
+  const [favourites, setFavourites] = useState([]);
+  const [favFetched, setFavFetched] = useState(false);
+  const [addReqSuccess, setAddReqSuccess] = useState(false);
+
+  const saveToList = async () => {
+    const data = { type: "push", movieId: id };
+    const res = await axios.put(
+      process.env.REACT_APP_API_URL + `/api/users/${user._id}`,
+      data,
+      {
+        headers: {
+          authorization: `Bearer ${user.accessToken}`,
+        },
+      }
+    );
+    console.log(res);
+    setAddReqSuccess(true);
+  };
 
   useEffect(() => {
+    setMovie({});
     const getMovie = async () => {
       const res = await axios.get(
         process.env.REACT_APP_API_URL + `/api/movies/find/${id}`,
@@ -31,8 +51,16 @@ const Movie = () => {
 
       setMovie(res.data);
     };
+    const getFavourites = async () => {
+      const res2 = await axios.get(
+        process.env.REACT_APP_API_URL + `/api/users/find/${user._id}`
+      );
+      setFavourites(res2.data.data.favourites);
+      setFavFetched(true);
+    };
+    getFavourites();
     getMovie();
-  }, []);
+  }, [addReqSuccess]);
   return (
     <div className="movie">
       {movie ? (
@@ -53,7 +81,15 @@ const Movie = () => {
               </button>
             </Link>
             <div className="icons">
-              <AddCircleOutlineOutlinedIcon className="icon" />
+              {favourites.includes(id) ? (
+                <CheckCircleOutlineOutlinedIcon className="icon" />
+              ) : (
+                <AddCircleOutlineOutlinedIcon
+                  className="icon"
+                  onClick={() => saveToList()}
+                />
+              )}
+
               <ThumbUpOutlinedIcon className="icon" />
               <ThumbDownOutlinedIcon className="icon" />
             </div>

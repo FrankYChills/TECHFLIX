@@ -1,5 +1,5 @@
 .home {
-  background-color: var(--main-color);
+  background-color: black;
   overflow: hidden;
 
   .loader {
@@ -7,5 +7,23 @@
     text-align: center;
     justify-content: center;
     margin-top: 40vh;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .home {
+    .loader {
+      margin-top: 35vh;
+      // margin-right: 10%;
+    }
+  }
+}
+
+@media (min-width: 450px) and (max-width: 1050px) {
+  .home {
+    .loader {
+      margin-top: 20vh;
+      margin-right: 10%;
+    }
   }
 }

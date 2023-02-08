@@ -7,6 +7,7 @@ import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import Movie from "./pages/movie/Movie";
 import { authContext } from "./context/auth/authContext";
+import Favourite from "./pages/favourites/Favourite";
 
 function App() {
   const { user } = useContext(authContext);
@@ -32,6 +33,7 @@ function App() {
             <Route path="series" element={<Home type="series" />} />
             <Route path="watch/:id" element={<Watch />} />
             <Route path="/info/:id" element={<Movie />} />
+            <Route path="fav" element={<Favourite />} />
           </>
         )}
       </Routes>

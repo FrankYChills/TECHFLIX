@@ -73,8 +73,13 @@
             background-color: var(--main-color);
             justify-content: space-between;
 
+            .link {
+              text-decoration: none;
+              color: white;
+            }
+
             span {
-              margin-bottom: 10px;
+              margin-bottom: 20px;
               cursor: pointer;
             }
             button {
