@@ -77,8 +77,8 @@ const Favourite = () => {
           <>
             {" "}
             <h1>Your Favourite Movies</h1>
-            {!movies ? (
-              <h3>You do not have any favourite movie added </h3>
+            {!movies.length ? (
+              <h3>No Favourite Movies</h3>
             ) : (
               <div className="favMovies">
                 {movies.map((movie) => {

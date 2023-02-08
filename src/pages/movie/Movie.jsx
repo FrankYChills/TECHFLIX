@@ -33,7 +33,7 @@ const Movie = () => {
         },
       }
     );
-    console.log(res);
+
     setAddReqSuccess(true);
   };
 
